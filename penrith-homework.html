@@ -31,24 +31,28 @@
         font-size: 24px;
         color: white;
       }
-      .homework-list {
-        list-style-type: none;
-        padding: 0;
+      .term-section {
+        margin-bottom: 30px;
       }
-      .homework-list li {
-        margin-bottom: 10px;
+      .term-section h2 {
+        margin-bottom: 20px;
       }
-      .homework-list a {
+      .homework-buttons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .homework-buttons a {
         text-decoration: none;
         color: white;
         font-weight: bold;
         padding: 10px 20px;
         background-color: #007bff;
         border-radius: 5px;
-        display: inline-block;
+        text-align: center;
         transition: background-color 0.3s, transform 0.3s;
       }
-      .homework-list a:hover {
+      .homework-buttons a:hover {
         background-color: #0056b3;
         transform: scale(1.05);
       }
@@ -87,13 +91,36 @@
       <div class="content">
         <div class="container">
           <h1>Penrith Class Homework</h1>
-          <p>Select a week below to download the homework:</p>
-          <ul class="homework-list">
-            <li><a href="penrith-homework/Homework 05-02.zip" download>Week 1</a></li>
-            <li><a href="Homework_Week_2.zip" download>Week 2</a></li>
-            <li><a href="Homework_Week_3.zip" download>Week 3</a></li>
-            <li><a href="Homework_Week_4.zip" download>Week 4</a></li>
-          </ul>
+          <div class="term-section">
+            <h2>Term 4 2024</h2>
+            <div class="homework-buttons">
+              <a href="Homework_T4_Week_1.zip" download>Week 1</a>
+              <a href="Homework_T4_Week_2.zip" download>Week 2</a>
+              <a href="Homework_T4_Week_3.zip" download>Week 3</a>
+              <a href="Homework_T4_Week_4.zip" download>Week 4</a>
+              <a href="Homework_T4_Week_5.zip" download>Week 5</a>
+              <a href="Homework_T4_Week_6.zip" download>Week 6</a>
+              <a href="Homework_T4_Week_7.zip" download>Week 7</a>
+              <a href="Homework_T4_Week_8.zip" download>Week 8</a>
+              <a href="Homework_T4_Week_9.zip" download>Week 9</a>
+              <a href="Homework_T4_Week_10.zip" download>Week 10</a>
+            </div>
+          </div>
+          <div class="term-section">
+            <h2>Term 1 2025</h2>
+            <div class="homework-buttons">
+              <a href="Homework_T1_Week_1.zip" download>Week 1</a>
+              <a href="Homework_T1_Week_2.zip" download>Week 2</a>
+              <a href="Homework_T1_Week_3.zip" download>Week 3</a>
+              <a href="Homework_T1_Week_4.zip" download>Week 4</a>
+              <a href="Homework_T1_Week_5.zip" download>Week 5</a>
+              <a href="Homework_T1_Week_6.zip" download>Week 6</a>
+              <a href="Homework_T1_Week_7.zip" download>Week 7</a>
+              <a href="Homework_T1_Week_8.zip" download>Week 8</a>
+              <a href="Homework_T1_Week_9.zip" download>Week 9</a>
+              <a href="Homework_T1_Week_10.zip" download>Week 10</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- End of the Main Content -->
