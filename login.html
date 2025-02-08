@@ -1,66 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Penrith Class</title>
-        <link href="styles.css" rel="stylesheet">
-        <script>
-          // Redirect to login page if not logged in
-          if (!localStorage.getItem("isLoggedIn")) {
-            window.location.href = "login.html";
-          }
-        </script>
-    </head>
-    <body>
-        <div class="main-wrapper">
-            <div class="header">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <div class="container">
-                      <a class="navbar-brand" href="index.html"><span class="first-letter">P</span>enrith <span class="first-letter">C</span>lass</a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link is-active" href="index.html">Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="homework.html">Homework</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="resources.html">Resources</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                          </li>
-                          <li class="nav-item">
-                            <button onclick="logout()" class="btn btn-secondary">Logout</button>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </nav>
-            </div>
-            <div class="content">
-                <div class="container">
-                    <h1 class="content-title">Hello! Welcome to our class page (testing stage).</h1>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="container">
-                    <div class="text-center">
-                        <p>&copy; 2023 Penrith Class</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-          function logout() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
-          }
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Penrith Class</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" placeholder="Enter username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" placeholder="Enter password" required><br><br>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p id="error-message" style="color: red; display: none;">Invalid username or password!</p>
+    </div>
+
+    <script>
+      const validUsername = "Penrith-class";
+      const validPassword = "Lovely-Beagle-78";
+
+      document.getElementById("login-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Validate credentials
+        if (username === validUsername && password === validPassword) {
+          // Mark the user as logged in
+          localStorage.setItem("isLoggedIn", "true");
+          // Redirect to homepage
+          window.location.href = "index.html";
+        } else {
+          // Show error message
+          document.getElementById("error-message").style.display = "block";
+        }
+      });
+    </script>
+  </body>
 </html>
