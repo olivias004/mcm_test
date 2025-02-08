@@ -13,6 +13,12 @@
         <link href="styles.css" rel="stylesheet">
 
         <title>Penrith Class</title>
+        <script>
+          // Redirect to login page if not logged in
+          if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "login.html";
+          }
+        </script>
     </head>
     <body>
         <!-- Start of the Main Page -->
@@ -39,6 +45,9 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
+                          </li>
+                          <li class="nav-item">
+                            <button onclick="logout()" class="btn btn-secondary">Logout</button>
                           </li>
                         </ul>
                       </div>
@@ -72,5 +81,11 @@
             <!-- End of the Footer -->
         </div>
         <!-- End of the Main Page -->
+        <script>
+          function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+          }
+        </script>
     </body>
 </html>
