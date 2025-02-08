@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Resources</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+      // Redirect to login page if not logged in or incorrect class
+      if (!localStorage.getItem("isLoggedIn") || localStorage.getItem("username") !== "Mixed-class") {
+        window.location.href = "login.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href="mixed-home.html">Mixed Class</a>
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="mixed-homework.html">Homework</a></li>
+                <li class="nav-item"><a class="nav-link is-active" href="mixed-resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><button onclick="logout()" class="btn btn-secondary">Logout</button></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <h1>Mixed Class Resources</h1>
+        <div class="container">
+          <ul>
+            <li><a href="resources/mixed-perms-combs.zip" download>Permutations & Combinations</a></li>
+            <li><a href="resources/mixed-binomial.zip" download>Binomial Theorem</a></li>
+            <li><a href="resources/mixed-induction.zip" download>Mathematical Induction</a></li>
+            <li><a href="resources/mixed-vectors.zip" download>Vectors</a></li>
+            <li><a href="resources/mixed-trigonometry.zip" download>Trigonometry</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("username");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>

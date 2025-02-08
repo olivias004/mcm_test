@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penrith Class</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+      // Redirect to login page if not logged in or incorrect class
+      if (!localStorage.getItem("isLoggedIn") || localStorage.getItem("username") !== "Penrith-class") {
+        window.location.href = "login.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href="penrith-home.html">Penrith Class</a>
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="penrith-homework.html">Homework</a></li>
+                <li class="nav-item"><a class="nav-link" href="penrith-resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><button onclick="logout()" class="btn btn-secondary">Logout</button></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <h1>Welcome to Penrith Class</h1>
+      </div>
+    </div>
+    <script>
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("username");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>

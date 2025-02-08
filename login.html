@@ -22,8 +22,17 @@
     </div>
 
     <script>
-      const validUsername = "Penrith-class";
-      const validPassword = "Lovely-Beagle-78";
+      // Valid login credentials
+      const credentials = {
+        "Penrith-class": "Lovely-Beagle-78",
+        "Mixed-class": "Glittering-Swan-84"
+      };
+
+      // Associated homepages for each user
+      const homepages = {
+        "Penrith-class": "penrith-home.html",
+        "Mixed-class": "mixed-home.html"
+      };
 
       document.getElementById("login-form").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent form submission
@@ -32,11 +41,12 @@
         const password = document.getElementById("password").value;
 
         // Validate credentials
-        if (username === validUsername && password === validPassword) {
+        if (credentials[username] && credentials[username] === password) {
           // Mark the user as logged in
           localStorage.setItem("isLoggedIn", "true");
-          // Redirect to homepage
-          window.location.href = "index.html";
+          localStorage.setItem("username", username); // Store the username to personalize
+          // Redirect to the corresponding homepage
+          window.location.href = homepages[username];
         } else {
           // Show error message
           document.getElementById("error-message").style.display = "block";
