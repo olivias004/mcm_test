@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Penrith Class</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,700&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- CSS Style -->
         <link href="styles.css" rel="stylesheet">
-        <script>
-          // Redirect to login page if not logged in
-          if (!localStorage.getItem("isLoggedIn")) {
-            window.location.href = "login.html";
-          }
-        </script>
+
+        <title>Penrith Class</title>
     </head>
     <body>
+        <!-- Start of the Main Page -->
         <div class="main-wrapper">
+            <!-- Start of the Header -->
             <div class="header">
+                <!-- Start of the Navigation Menu -->
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container">
                       <a class="navbar-brand" href="index.html"><span class="first-letter">P</span>enrith <span class="first-letter">C</span>lass</a>
@@ -35,19 +40,28 @@
                           <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                           </li>
-                          <li class="nav-item">
-                            <button onclick="logout()" class="btn btn-secondary">Logout</button>
-                          </li>
                         </ul>
                       </div>
                     </div>
                   </nav>
+                <!-- End of the Navigation Menu -->
             </div>
+            <!-- End of the Header -->
+            <!-- Start of the Main Content -->
             <div class="content">
                 <div class="container">
-                    <h1 class="content-title">Hello! Welcome to our class page (testing stage).</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Title -->
+                            <h1 class="content-title">
+                                Hello! Welcome to our class page (testing stage).
+                            </h1>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- End of the Main Content -->
+            <!-- Start of the Footer -->
             <div class="footer">
                 <div class="container">
                     <div class="text-center">
@@ -55,12 +69,8 @@
                     </div>
                 </div>
             </div>
+            <!-- End of the Footer -->
         </div>
-        <script>
-          function logout() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
-          }
-        </script>
+        <!-- End of the Main Page -->
     </body>
 </html>
